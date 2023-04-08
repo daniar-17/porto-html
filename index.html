@@ -1,0 +1,2690 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-layout="vertical"
+  data-topbar="light"
+  data-sidebar="dark"
+  data-sidebar-size="lg"
+  data-sidebar-image="none"
+  data-preloader="disable"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>Portfolio Daniar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Premium Multipurpose Admin & Dashboard Template"
+      name="description"
+    />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- CSS -->
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!--Swiper slider css-->
+    <link
+      href="assets/libs/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Layout config Js -->
+    <script src="assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Animasi -->
+    <style>
+      :root {
+        --gray: #2c3333;
+        --balck: #eeeeee;
+        --white: #ffffff;
+        --green: #4db6ac;
+        --truck: #2c3639;
+      }
+
+      .loop-wrapper {
+        margin: 0 auto;
+        position: relative;
+        display: block;
+        width: 600px;
+        height: 250px;
+        overflow: hidden;
+        border-bottom: 3px solid var(--balck);
+        color: var(--balck);
+      }
+      .mountain {
+        position: absolute;
+        right: -900px;
+        bottom: -20px;
+        width: 2px;
+        height: 2px;
+        box-shadow: 0 0 0 50px var(--gray), 60px 50px 0 70px var(--gray),
+          90px 90px 0 50px var(--gray), 250px 250px 0 50px var(--gray),
+          290px 320px 0 50px var(--gray), 320px 400px 0 50px var(--gray);
+        transform: rotate(130deg);
+        animation: mtn 20s linear infinite;
+      }
+      .hill {
+        position: absolute;
+        right: -900px;
+        bottom: -50px;
+        width: 400px;
+        border-radius: 50%;
+        height: 20px;
+        box-shadow: 0 0 0 50px var(--truck), -20px 0 0 20px var(--truck),
+          -90px 0 0 50px var(--truck), 250px 0 0 50px var(--truck),
+          290px 0 0 50px var(--truck), 620px 0 0 50px var(--truck);
+        animation: hill 4s 2s linear infinite;
+      }
+      .tree,
+      .tree:nth-child(2),
+      .tree:nth-child(3) {
+        position: absolute;
+        height: 100px;
+        width: 35px;
+        bottom: 0;
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/tree.svg)
+          no-repeat;
+      }
+      .rock {
+        margin-top: -17%;
+        height: 2%;
+        width: 2%;
+        bottom: -2px;
+        border-radius: 20px;
+        position: absolute;
+        background: #ddd;
+      }
+      .truck,
+      .wheels {
+        transition: all ease;
+        width: 85px;
+        margin-right: -60px;
+        bottom: 0px;
+        right: 50%;
+        position: absolute;
+        background: var(--truck);
+      }
+      .truck {
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/truck.svg)
+          no-repeat;
+        background-size: contain;
+        height: 60px;
+      }
+      .truck:before {
+        content: " ";
+        position: absolute;
+        width: 25px;
+        box-shadow: -30px 28px 0 1.5px var(--white),
+          -35px 18px 0 1.5px var(--white);
+      }
+      .wheels {
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130015/wheels.svg)
+          no-repeat;
+        height: 15px;
+        margin-bottom: 0;
+      }
+      .tree {
+        animation: tree 3s 0s linear infinite;
+      }
+      .tree:nth-child(2) {
+        animation: tree2 2s 0.15s linear infinite;
+      }
+      .tree:nth-child(3) {
+        animation: tree3 8s 0.05s linear infinite;
+      }
+      .rock {
+        animation: rock 4s -0.53s linear infinite;
+      }
+      .truck {
+        animation: truck 4s 0.08s ease infinite;
+      }
+      .wheels {
+        animation: truck 4s 0.001s ease infinite;
+      }
+      .truck:before {
+        animation: wind 1.5s 0s ease infinite;
+      }
+
+      @keyframes tree {
+        0% {
+          transform: translate(1350px);
+        }
+        50% {
+        }
+        100% {
+          transform: translate(-50px);
+        }
+      }
+      @keyframes tree2 {
+        0% {
+          transform: translate(650px);
+        }
+        50% {
+        }
+        100% {
+          transform: translate(-50px);
+        }
+      }
+      @keyframes tree3 {
+        0% {
+          transform: translate(2750px);
+        }
+        50% {
+        }
+        100% {
+          transform: translate(-50px);
+        }
+      }
+
+      @keyframes rock {
+        0% {
+          right: -200px;
+        }
+        100% {
+          right: 2000px;
+        }
+      }
+      @keyframes truck {
+        0% {
+        }
+        6% {
+          transform: translateY(0px);
+        }
+        7% {
+          transform: translateY(-6px);
+        }
+        9% {
+          transform: translateY(0px);
+        }
+        10% {
+          transform: translateY(-1px);
+        }
+        11% {
+          transform: translateY(0px);
+        }
+        100% {
+        }
+      }
+      @keyframes wind {
+        0% {
+        }
+        50% {
+          transform: translateY(3px);
+        }
+        100% {
+        }
+      }
+      @keyframes mtn {
+        100% {
+          transform: translateX(-2000px) rotate(130deg);
+        }
+      }
+      @keyframes hill {
+        100% {
+          transform: translateX(-2000px);
+        }
+      }
+    </style>
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target="#navbar-example">
+    <!-- Begin page -->
+    <div class="layout-wrapper landing">
+      <nav class="navbar navbar-expand-lg navbar-landing fixed-top" id="navbar">
+        <div class="container">
+          <button
+            class="navbar-toggler py-0 fs-20 text-body"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="mdi mdi-menu"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
+              <li class="nav-item">
+                <a class="nav-link fs-14 active" href="#hero">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-14" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-14" href="#experiences">Experiences</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-14" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-14" href="#certificate">Certificate</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- end navbar -->
+      <div
+        class="vertical-overlay"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent.show"
+      ></div>
+
+      <!-- start hero section -->
+      <section
+        class="section pb-0 hero-section"
+        id="hero"
+        style="background: #3a4750"
+      >
+        <div class="container">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-6">
+              <div class="text-muted">
+                <h3 class="text-success">
+                  <strong
+                    ><i class="mdi mdi-camera-iris mdi-24px text-success"></i>
+                    Hello I'm</strong
+                  >
+                </h3>
+                <h1 class="mb-2" style="color: #f9f7f7">Daniar Nur Amin</h1>
+                <h4 class="mb-3" style="color: #dbe2ef">Software Developer</h4>
+                <a class="nav-link ff-secondary" style="cursor: pointer">
+                  <i class="mdi mdi-email-outline mdi-24px"></i
+                  ><span class="fs-18"> daniarnuramin1@gmail.com</span>
+                </a>
+                <a class="nav-link ff-secondary mb-3" style="cursor: pointer">
+                  <i class="mdi mdi-whatsapp mdi-24px"></i
+                  ><span class="fs-17"> 0812-9309-8150</span>
+                </a>
+                <div class="row">
+                  <div class="hstack gap-2">
+                    <a
+                      href="https://www.linkedin.com/in/daniar-nur-amin/"
+                      target="_blank"
+                      class="btn btn-dark btn-icon"
+                      ><i class="ri-linkedin-box-fill ri-xl text-white"></i
+                    ></a>
+                    <a
+                      href="https://github.com/daniar-17"
+                      target="_blank"
+                      class="btn btn-dark btn-icon"
+                      ><i class="ri-github-fill ri-xl text-white"></i
+                    ></a>
+                    <a
+                      href="https://www.instagram.com/daniar_nur_amin/"
+                      target="_blank"
+                      class="btn btn-dark btn-icon"
+                      ><i class="ri-instagram-line ri-xl text-white"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- end col -->
+            <div
+              class="col-lg-6 col-sm-7 col-10 ms-auto order-1 order-lg-2 text-center mb-5"
+            >
+              <div>
+                <div class="loop-wrapper">
+                  <div class="mountain"></div>
+                  <div class="hill"></div>
+                  <div class="tree"></div>
+                  <div class="tree"></div>
+                  <div class="tree"></div>
+                  <div class="rock"></div>
+                  <div class="truck"></div>
+                  <div class="wheels"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end row -->
+        </div>
+      </section>
+      <!-- end hero section -->
+
+      <!-- start about -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="text-center mb-5">
+                <h1 class="mb-3 ff-secondary fw-semibold lh-base">
+                  About <span class="text-primary">Me</span>
+                </h1>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-sm-7 col-10 mx-auto">
+              <div>
+                <img src="assets/images/ab-img.png" alt="" class="img-fluid" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="text-muted ps-lg-5">
+                <h4 class="mb-3">👋 Haii,</h4>
+                <p class="mb-3">
+                  My full name Daniar Nur Amin, you can call me "Daniar". I'm
+                  Software Developer who specialized in Fullstack Developer from
+                  Indonesia. I have experience in developing applications,
+                  especially Web Developers.
+                </p>
+
+                <a class="nav-link ff-secondary mb-3" style="cursor: pointer">
+                  <i class="mdi mdi-check-decagram mdi-24px text-success"></i
+                  ><span class="h4"> Languages and Tools</span>
+                </a>
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >PHP</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >C#</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >Javascript</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >Laravel</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >.Net Framework</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >Node Js</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >React Js</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >Vue Js</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >Jquery</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >Ajax</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >Microsoft SQL Server</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >MySql</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >MongoDb</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >Git</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >Html & Css</a
+                >
+                <a href="javascript:void(0);" class="badge badge-soft-primary"
+                  >PostMan</a
+                >
+                <br />
+
+                <a
+                  href="javascript:void(0);"
+                  class="mt-3 btn btn-primary btn-label rounded-pill waves-effect waves-light"
+                  ><i
+                    class="ri-download-cloud-line label-icon align-middle rounded-pill fs-20 me-2"
+                  ></i>
+                  Download CV</a
+                >
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end container -->
+      </section>
+      <!-- end about -->
+
+      <!-- start experiences -->
+      <section class="section bg-light" id="experiences">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <h1 class="mb-3 ff-secondary fw-semibold text-capitalize lh-base">My <span class="text-primary">Experience</span></h1>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <div class="row align-items-center mb-4">
+                <div class="col-lg-6 text-center">
+                    <h2 class="mb-2">Education</h2>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <h2 class="mb-2">Work Experience</h2>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-primary rounded fs-3 shadow">
+                                        <i class="bx bxs-school text-primary"></i>
+                                    </span>
+                                </div>
+                                <div class="ms-3 flex-grow-1">
+                                    <a href="#!">
+                                        <h5>Informatics Engineering</h5>
+                                    </a>
+                                    <ul class="list-inline text-muted mb-2">
+                                        <li class="list-inline-item">
+                                            <i class="ri-award-fill align-bottom me-1"></i> Universitas Komputer Indonesia, 2015-2019
+                                        </li>
+                                    </ul>
+                                    <div class="hstack gap-2">
+                                        <span class="badge badge-soft-primary">Algoritma</span>
+                                        <span class="badge badge-soft-primary">Aplikasi IT</span>
+                                        <span class="badge badge-soft-primary">Struktur Data</span>
+                                        <span class="badge badge-soft-primary">Basis Data</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="javascript:void(0);" class="btn btn-soft-primary waves-effect waves-light shadow-none" data-bs-toggle="modal" data-bs-target="#eduKuliah"> <strong>View</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-success rounded fs-3 shadow">
+                                        <i class="bx bx-briefcase text-success"></i>
+                                    </span>
+                                </div>
+                                <div class="ms-3 flex-grow-1">
+                                    <a href="#!">
+                                        <h5>Software Developer</h5>
+                                    </a>
+                                    <ul class="list-inline text-muted mb-2">
+                                        <li class="list-inline-item">
+                                            <i class="ri-award-fill align-bottom me-1"></i> Code Id, 2022-Present
+                                        </li>
+                                    </ul>
+                                    <div class="hstack gap-2">
+                                        <span class="badge badge-soft-primary">.Net Framework</span>
+                                        <span class="badge badge-soft-primary">Microsoft SQL Server</span>
+                                        <span class="badge badge-soft-primary">Microfost Azure</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="javascript:void(0);" class="btn btn-soft-success waves-effect waves-light shadow-none" data-bs-toggle="modal" data-bs-target="#work1"> <strong>View</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-warning rounded fs-3 shadow">
+                                        <i class="bx bxs-school text-warning"></i>
+                                    </span>
+                                </div>
+                                <div class="ms-3 flex-grow-1">
+                                    <a href="#!">
+                                        <h5>Informatics Engineering</h5>
+                                    </a>
+                                    <ul class="list-inline text-muted mb-2">
+                                        <li class="list-inline-item">
+                                            <i class="ri-award-fill align-bottom me-1"></i> SMKN 1 GANTAR, 2012-2015
+                                        </li>
+                                    </ul>
+                                    <div class="hstack gap-2">
+                                        <span class="badge badge-soft-primary">VB6</span>
+                                        <span class="badge badge-soft-primary">JAVA</span>
+                                        <span class="badge badge-soft-primary">Web</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="javascript:void(0);" class="btn btn-soft-warning waves-effect waves-light shadow-none" data-bs-toggle="modal" data-bs-target="#eduSMK"> <strong>View</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-secondary rounded fs-3 shadow">
+                                        <i class="bx bx-briefcase text-secondary"></i>
+                                    </span>
+                                </div>
+                                <div class="ms-3 flex-grow-1">
+                                    <a href="#!">
+                                        <h5>Software Developer</h5>
+                                    </a>
+                                    <ul class="list-inline text-muted mb-2">
+                                        <li class="list-inline-item">
+                                            <i class="ri-award-fill align-bottom me-1"></i> PT WhiteOpen Teknologi, 2020-2022
+                                        </li>
+                                    </ul>
+                                    <div class="hstack gap-2">
+                                        <span class="badge badge-soft-primary">C#</span>
+                                        <span class="badge badge-soft-primary">.Net Framework</span>
+                                        <span class="badge badge-soft-primary">Microsoft SQL Server</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="javascript:void(0);" class="btn btn-soft-secondary  waves-effect waves-light shadow-none" data-bs-toggle="modal" data-bs-target="#work2"> <strong>View</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-dark rounded fs-3 shadow">
+                                        <i class="bx bx-briefcase text-dark"></i>
+                                    </span>
+                                </div>
+                                <div class="ms-3 flex-grow-1">
+                                    <a href="#!">
+                                        <h5>Web Developer</h5>
+                                    </a>
+                                    <ul class="list-inline text-muted mb-2">
+                                        <li class="list-inline-item">
+                                            <i class="ri-award-fill align-bottom me-1"></i> Freelance Web, 2021-2022
+                                        </li>
+                                    </ul>
+                                    <div class="hstack gap-2">
+                                        <span class="badge badge-soft-primary">PHP</span>
+                                        <span class="badge badge-soft-primary">Laravel</span>
+                                        <span class="badge badge-soft-primary">MySql</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="javascript:void(0);" class="btn btn-soft-dark  waves-effect waves-light shadow-none" data-bs-toggle="modal" data-bs-target="#work3"> <strong>View</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+
+        <!-- Modals -->
+        <div id="eduKuliah" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Education</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="fs-16">
+                            Informatics Engineering
+                        </h3>
+                        <h5>
+                            <i class="ri-award-fill align-bottom me-1"></i> Universitas Komputer Indonesia, 2015-2019
+                        </h5>
+                        <p class="text-muted">I studied for 4 years at the "Universitas Komputer Indonesia" majoring in Informatics Engineering, and when I was in college I actively participated in organizational activities. i passed with grades 3,59.</p>
+                        <p class="mb-2">
+                            Campus Organization :
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="ri-checkbox-circle-fill text-success"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-2 fs-14">
+                                    <p class="text-muted mb-0">Students Majoring in Informaics Engineering as <strong>Vice President</strong>, 2017-2018.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="ri-checkbox-circle-fill text-success"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-2 fs-14">
+                                    <p class="text-muted mb-0">Student Executive Board as <strong>Minister of State Secretary</strong>, 2018-2019.</p>
+                                </div>
+                            </div>
+                        </p>
+                        <p class="mb-2">
+                            I'm Learn :
+                            <div class="hstack gap-2">
+                                <span class="badge badge-soft-primary">Algoritma</span>
+                                <span class="badge badge-soft-primary">Aplikasi IT</span>
+                                <span class="badge badge-soft-primary">Struktur Data</span>
+                                <span class="badge badge-soft-primary">Basis Data</span>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div id="eduSMK" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Education</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="fs-16">
+                            Informatics Engineering
+                        </h3>
+                        <h5>
+                            <i class="ri-award-fill align-bottom me-1"></i> SMKN 1 GANTAR, 2012-2015
+                        </h5>
+                        <p class="text-muted">I studied for 3 years at the "SMKN 1 GANTAR". This is where I first learned about programming languages.</p>
+                        <p class="mb-2">
+                            School Organization :
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="ri-checkbox-circle-fill text-success"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-2 fs-14">
+                                    <p class="text-muted mb-0">OSIS as <strong>Staff</strong>, 2012-2014.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="ri-checkbox-circle-fill text-success"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-2 fs-14">
+                                    <p class="text-muted mb-0">PMR as <strong>President</strong>, 2013-2014.</p>
+                                </div>
+                            </div>
+                        </p>
+                        <p class="mb-2">
+                            I'm Learn :
+                            <div class="hstack gap-2">
+                                <span class="badge badge-soft-primary">VB6</span>
+                                <span class="badge badge-soft-primary">Java</span>
+                                <span class="badge badge-soft-primary">Web</span>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div id="work1" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Work Experience</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="fs-16">
+                            Software Developer
+                        </h3>
+                        <h5>
+                            <i class="ri-award-fill align-bottom me-1"></i> Code Id, 2022-Present
+                        </h5>
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2 fs-14">
+                                <p class="text-muted mb-0">Placement @Astraotoparts - Astra Otoshop Business (AstraOtoshop - eCommerce).</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Support clients or users when there is an issue with the application.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Help explain the program to the user and how to use the system.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Testing of functions that have been repaired by manual testing.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Inform the team if there are problems with the application.</p>
+                            </div>
+                        </div>
+                        <p class="mb-2">
+                            Languages and Tools :
+                            <div class="hstack gap-2 mb-2">
+                                <span class="badge badge-soft-primary">C#</span>
+                                <span class="badge badge-soft-primary">.Net Framework</span>
+                                <span class="badge badge-soft-primary">Microsoft SQL Server</span>
+                                <span class="badge badge-soft-primary">Microsoft Azure</span>
+                            </div>
+                            <div class="hstack gap-2">
+                                <span class="badge badge-soft-primary">B2B</span>
+                                <span class="badge badge-soft-primary">Bosnet (Main Dealer System)</span>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div id="work2" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Work Experience</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="fs-16">
+                            Software Developer
+                        </h3>
+                        <h5>
+                            <i class="ri-award-fill align-bottom me-1"></i> PT WhiteOpen Teknologi, 2020-2022
+                        </h5>
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2 fs-14">
+                                <p class="text-muted mb-0">Making applications according to client or user requests, and makes functions according to existing recruitment documents.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Fix issues or bugs that occur in the application.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Creating test documents and conducting tests according to existing documents, testing is done manually.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Make Query in Stored Procedures in Microsoft Sql Server to Insert, Update, Delete, or just to get data according to the request.</p>
+                            </div>
+                        </div>
+                        <p class="mb-2">
+                            Languages and Tools :
+                            <div class="hstack gap-2 mb-2">
+                                <span class="badge badge-soft-primary">C#</span>
+                                <span class="badge badge-soft-primary">.Net Framework</span>
+                                <span class="badge badge-soft-primary">Microsoft SQL Server</span>
+                                <span class="badge badge-soft-primary">JQuery</span>
+                                <span class="badge badge-soft-primary">Ajax</span>
+                            </div>
+                            <div class="hstack gap-2">
+                                <span class="badge badge-soft-primary">Store Procedure</span>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div id="work3" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Work Experience</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="fs-16">
+                            Web Developer
+                        </h3>
+                        <h5>
+                            <i class="ri-award-fill align-bottom me-1"></i> Freelance Web, 2021-2022
+                        </h5>
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2 fs-14">
+                                <p class="text-muted mb-0">Create web applications from functions, Input and Output according to client requests.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Fix issues or bugs that occur in the application.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Create databases, tables, and relations from each table.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Create Query Get, Update, Insert,  and Delete according to function requirements.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-2 mb-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-checkbox-circle-fill text-success"></i>
+                            </div>
+                            <div class="flex-grow-1 ms-2">
+                                <p class="text-muted mb-0 fs-14">Hosting on completed web projects.</p>
+                            </div>
+                        </div>
+                        <p class="mb-2">
+                            Languages and Tools :
+                            <div class="hstack gap-2 mb-2">
+                                <span class="badge badge-soft-primary">PHP</span>
+                                <span class="badge badge-soft-primary">Laravel</span>
+                                <span class="badge badge-soft-primary">MySql</span>
+                                <span class="badge badge-soft-primary">JQuery</span>
+                                <span class="badge badge-soft-primary">Ajax</span>
+                            </div>
+                            <div class="hstack gap-2">
+                                <span class="badge badge-soft-primary">Send Email</span>
+                                <span class="badge badge-soft-primary">Notification in Telegram</span>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+      </section>
+      <!-- end experiences -->
+
+      <!-- start portfolio -->
+      <section class="section" id="portfolio">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-2">
+                        <h1 class="mb-3 ff-secondary fw-semibold text-capitalize lh-base">My <span class="text-primary">Portfolio</span></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center">
+                        <ul class="nav nav-pills filter-btns justify-content-center" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-medium active" type="button" data-filter="all">All</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-medium" type="button" data-filter="laravel">Laravel</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-medium" type="button" data-filter="net">.Net Framework</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-medium" type="button" data-filter="nodejs">Node Js</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-medium" type="button" data-filter="reactjs">React Js</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link fw-medium" type="button" data-filter="vuejs">Vue Js</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 product-item laravel">
+                    <div class="card explore-box card-animate">
+                        <div class="card-body">
+                            <img src="assets/images/customer_app/03 Dashboard.png" alt="" class="img-fluid rounded" />
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline fs-14 text-muted">
+                                <li class="list-inline-item">
+                                    <i class="ri-checkbox-circle-line align-bottom me-1"></i> PHP, Laravel & MySQL
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0);">
+                                <h5>Customer App</h5>
+                            </a>
+                            <p class="text-muted fs-14">This is a web-based application about creating customer data.</p>
+                            <div>
+                                <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">Learn More <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-item laravel">
+                    <div class="card explore-box card-animate">
+                        <div class="card-body">
+                            <img src="assets/images/inventory_management/05_data_perencanaan.jpeg" alt="" class="img-fluid rounded" />
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline fs-14 text-muted">
+                                <li class="list-inline-item">
+                                    <i class="ri-checkbox-circle-line align-bottom me-1"></i> PHP, Laravel & MySQL
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0);">
+                                <h5>Inventory Management</h5>
+                            </a>
+                            <p class="text-muted fs-14">This is a web application about inventory management system.</p>
+                            <div>
+                                <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".inventory-management">Learn More <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-item laravel">
+                    <div class="card explore-box card-animate">
+                        <div class="card-body">
+                            <img src="assets/images/article/02_utama.png" alt="" class="img-fluid rounded" />
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline fs-14 text-muted">
+                                <li class="list-inline-item">
+                                    <i class="ri-checkbox-circle-line align-bottom me-1"></i> PHP, Laravel & MySQL
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0);">
+                                <h5>Web Article</h5>
+                            </a>
+                            <p class="text-muted fs-14">This is a web application about Article management system.</p>
+                            <div>
+                                <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".article">Learn More <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-item laravel">
+                    <div class="card explore-box card-animate">
+                        <div class="card-body">
+                            <img src="assets/images/financial/Cek_Terima.jpg" alt="" class="img-fluid rounded" />
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline fs-14 text-muted">
+                                <li class="list-inline-item">
+                                    <i class="ri-checkbox-circle-line align-bottom me-1"></i> PHP, Laravel & MySQL
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0);">
+                                <h5>Financial Information System</h5>
+                            </a>
+                            <p class="text-muted fs-14">This is a web application about Financial Information System.</p>
+                            <div>
+                                <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".financial">Learn More <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-item laravel vuejs">
+                    <div class="card explore-box card-animate">
+                        <div class="card-body">
+                            <img src="assets/images/ecommerce/01_utama.png" alt="" class="img-fluid rounded" />
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline fs-14 text-muted">
+                                <li class="list-inline-item">
+                                    <i class="ri-checkbox-circle-line align-bottom me-1"></i> PHP, Laravel & MySQL
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0);">
+                                <h5>Ecommerce</h5>
+                            </a>
+                            <p class="text-muted fs-14">This is a web application about Ecommerce Business.</p>
+                            <div>
+                                <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".ecommerce">Learn More <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-item nodejs reactjs">
+                    <div class="card explore-box card-animate">
+                        <div class="card-body">
+                            <img src="assets/images/event/01_utama1.png" alt="" class="img-fluid rounded" />
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline fs-14 text-muted">
+                                <li class="list-inline-item">
+                                    <i class="ri-checkbox-circle-line align-bottom me-1"></i> Javascript, Node Js, React Js & MongoDb
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0);">
+                                <h5>Event Management</h5>
+                            </a>
+                            <p class="text-muted fs-14">This is a web application about Events Management.</p>
+                            <div>
+                                <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".events">Learn More <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-item nodejs reactjs">
+                    <div class="card explore-box card-animate">
+                        <div class="card-body">
+                            <img src="assets/images/cosmetic_app/02_about.png" alt="" class="img-fluid rounded" />
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline fs-14 text-muted">
+                                <li class="list-inline-item">
+                                    <i class="ri-checkbox-circle-line align-bottom me-1"></i>Node Js & React Js
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0);">
+                                <h5>Cosmetic App</h5>
+                            </a>
+                            <p class="text-muted fs-14">This is a web application about Landing Page Cosmetic App.</p>
+                            <div>
+                                <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".cosmetic-app">Learn More <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-item vuejs laravel">
+                    <div class="card explore-box card-animate">
+                        <div class="card-body">
+                            <img src="assets/images/simple_crud_blogs/01_data.png" alt="" class="img-fluid rounded" />
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline fs-14 text-muted">
+                                <li class="list-inline-item">
+                                    <i class="ri-checkbox-circle-line align-bottom me-1"></i>Laravel, Vue Js & Inertia Js
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0);">
+                                <h5>Simple CRUD - Blogs</h5>
+                            </a>
+                            <p class="text-muted fs-14">This is a web application about Simple CRUD - Blogs.</p>
+                            <div>
+                                <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".simple-crud-blogs">Learn More <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-item net">
+                    <div class="card explore-box card-animate">
+                        <div class="card-body">
+                            <img src="assets/images/antrian/04_layanan.png" alt="" class="img-fluid rounded" />
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline fs-14 text-muted">
+                                <li class="list-inline-item">
+                                    <i class="ri-checkbox-circle-line align-bottom me-1"></i>C#, Net Core & Json
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0);">
+                                <h5>Simple Hospital Queue</h5>
+                            </a>
+                            <p class="text-muted fs-14">This is a web application about Simple Hospital Queue.</p>
+                            <div>
+                                <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".simple-hospital-queue">Learn More <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 product-item net">
+                    <div class="card explore-box card-animate">
+                        <div class="card-body">
+                            <img src="assets/images/library_core/01_data.png" alt="" class="img-fluid rounded" />
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-inline fs-14 text-muted">
+                                <li class="list-inline-item">
+                                    <i class="ri-checkbox-circle-line align-bottom me-1"></i>C#, Net Core & Microsoft Sql Server
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0);">
+                                <h5>Simple CRUD - Library</h5>
+                            </a>
+                            <p class="text-muted fs-14">This is a web application about Simple CRUD - Library.</p>
+                            <div>
+                                <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".simple-crud-library">Learn More <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <!--  Extra Large modal example -->
+        <div class="modal fade bs-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Cutomer App</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="fs-14 text-muted">
+                                    This is a web-based application about creating customer data. This application is made for the needs of a technical test, this application has features : 
+                                </p>
+                                <hr class="text-muted">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Create, Read, Update and Delete Data Customer.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">Create, Read, Update and Delete Data User to Access App.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">Login, Reister, <strong>Send OTP to Verify Email.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">If you add customer data, it will <strong>Automatically Send an Email.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">If you add customer data, it will <strong>Automatically Send Notifications to Telegram.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">You can add data with <strong>Multiple Row or Import from File Excel.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14"><strong>Show Data With Charts.</strong></p>
+                                    </div>
+                                </div>
+                                <p class="mb-2">
+                                    <span class="text-primary">Languages and Tools :</span> 
+                                    <div class="hstack gap-2 mb-2">
+                                        <span class="badge badge-soft-primary">PHP</span>
+                                        <span class="badge badge-soft-primary">Laravel</span>
+                                        <span class="badge badge-soft-primary">MySql</span>
+                                        <span class="badge badge-soft-primary">JQuery</span>
+                                        <span class="badge badge-soft-primary">Ajax</span>
+                                        <span class="badge badge-soft-primary">SweetAlert2</span>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card bg-soft-dark">
+                                    <div class="card-body">
+                                        <!-- Swiper -->
+                                        <div class="swiper pagination-fraction-swiper rounded">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/customer_app/02 Sent OTP.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/customer_app/02 Sent OTP Email.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/customer_app/03 Dashboard.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/customer_app/04 Data Customer.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/customer_app/04 Notif In Telegram.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/customer_app/04 Sent Email Customer.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/customer_app/05 Data User.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/customer_app/01_remove.png" alt="" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next bg-white shadow"></div>
+                                            <div class="swiper-button-prev bg-white shadow"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div><!-- end card-body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade inventory-management" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Inventory Management</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="fs-14 text-muted">
+                                    This is a web application about inventory management system. This application is made for the needs of a <strong>Freelance Web</strong>, this application has features : 
+                                </p>
+                                <hr class="text-muted">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Create, Read, Update and Delete Data Supplier and User.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">Add Planning Raw Material with <strong>Multiple Row.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">Approvment Planning Raw Material by Head Office.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">Report planning raw material and <strong>Export data to PDF and Excel.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14"><strong>Feature Chat</strong> in Application.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">Role Access Head Office and Staff.</strong></p>
+                                    </div>
+                                </div>
+                                <p class="mb-2">
+                                    <span class="text-primary">Languages and Tools :</span> 
+                                    <div class="hstack gap-2 mb-2">
+                                        <span class="badge badge-soft-primary">PHP</span>
+                                        <span class="badge badge-soft-primary">Laravel</span>
+                                        <span class="badge badge-soft-primary">MySql</span>
+                                        <span class="badge badge-soft-primary">JQuery</span>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card bg-soft-dark">
+                                    <div class="card-body">
+                                        <!-- Swiper -->
+                                        <div class="swiper pagination-fraction-swiper rounded">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/inventory_management/01_login.jpeg" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/inventory_management/02_data_supplier.jpeg" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/inventory_management/03_tambah_barang.jpeg" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/inventory_management/04_tambah_perencanaan.jpeg" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/inventory_management/05_data_perencanaan.jpeg" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/inventory_management/06_laporan_perencanaan.jpeg" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/inventory_management/07_chat.jpeg" alt="" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next bg-white shadow"></div>
+                                            <div class="swiper-button-prev bg-white shadow"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div><!-- end card-body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade article" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Web Article</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="fs-14 text-muted">
+                                    This is a web application about inventory management system. This application is made for the needs of a <strong>Virtual Internship Program Qwords Fullstack Developer</strong> from Rakamin Academy as Final Project, this application has features : 
+                                </p>
+                                <hr class="text-muted">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Login and Register <strong>with Laravel Ui.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">Create, Read, Update and Delete Data Category and Article.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14"><strong>Feature Recomendation New Article.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">In the Article description, I use <strong>CKEditor.</strong></p>
+                                    </div>
+                                </div>
+                                <p class="mb-2">
+                                    <span class="text-primary">Languages and Tools :</span> 
+                                    <div class="hstack gap-2 mb-2">
+                                        <span class="badge badge-soft-primary">PHP</span>
+                                        <span class="badge badge-soft-primary">Laravel</span>
+                                        <span class="badge badge-soft-primary">MySql</span>
+                                        <span class="badge badge-soft-primary">JQuery</span>
+                                        <span class="badge badge-soft-primary">CKEditor</span>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card bg-soft-dark">
+                                    <div class="card-body">
+                                        <!-- Swiper -->
+                                        <div class="swiper pagination-fraction-swiper rounded">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/article/01_login.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/article/02_utama.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/article/03_detail2.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/article/04_categori.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/article/05_artikel.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/article/06_artikel.png" alt="" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next bg-white shadow"></div>
+                                            <div class="swiper-button-prev bg-white shadow"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div><!-- end card-body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade financial" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Financial Information System</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="fs-14 text-muted">
+                                    This is a web application about Financial Information System. This application is made for the needs of a <strong>Freelance Web</strong>, this application has features : 
+                                </p>
+                                <hr class="text-muted">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Create and Read Data <strong>Financial Submission with File PDF Financial Submission and Multiple Row.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">Create, Read, Update and Delete <strong>Financial Income and Expenses.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14"><strong>Dashboard with total Financial Income, Expenses and Submission.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14"><strong>Role Head Office and Treasurer</strong>, Treasurer job is create Financial Submission. And Head Office job is Approvment Financial Submission.</p>
+                                    </div>
+                                </div>
+                                <p class="mb-2">
+                                    <span class="text-primary">Languages and Tools :</span> 
+                                    <div class="hstack gap-2 mb-2">
+                                        <span class="badge badge-soft-primary">PHP</span>
+                                        <span class="badge badge-soft-primary">Laravel</span>
+                                        <span class="badge badge-soft-primary">MySql</span>
+                                        <span class="badge badge-soft-primary">JQuery</span>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card bg-soft-dark">
+                                    <div class="card-body">
+                                        <!-- Swiper -->
+                                        <div class="swiper pagination-fraction-swiper rounded">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/financial/02_Dashboard.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/financial/01_Data_Pengajuan.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/financial/03_Tambah_Pengajuan.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/financial/Cek_Terima.jpg" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/financial/Cek_Tolak.jpg" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/financial/Detail_Terima.jpg" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/financial/Detail_Tolak.jpg" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/financial/05_login.png" alt="" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next bg-white shadow"></div>
+                                            <div class="swiper-button-prev bg-white shadow"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div><!-- end card-body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade ecommerce" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Ecommerce </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="fs-14 text-muted">
+                                    This is a web application about Ecommerce Business. This application is the result of me take <strong>Online Classes In Build With Angga</strong>, this application has features : 
+                                </p>
+                                <hr class="text-muted">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Login and Register User.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">Dashboard User : <strong>Product Settings for Sale, View Transaction, Store Settings and Account Settings.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14">Dashboard Admin : <strong>Product Settings, Image Product, Categories, View Transactions and Users Settings.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14"><strong>Show Product, Detail Product and CheckOut Product.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14"><strong>Payment with Midtrans.</strong></p>
+                                    </div>
+                                </div>
+                                <p class="mb-2">
+                                    <span class="text-primary">Languages and Tools :</span> 
+                                    <div class="hstack gap-2 mb-2">
+                                        <span class="badge badge-soft-primary">PHP</span>
+                                        <span class="badge badge-soft-primary">Laravel</span>
+                                        <span class="badge badge-soft-primary">MySql</span>
+                                        <span class="badge badge-soft-primary">JQuery</span>
+                                        <span class="badge badge-soft-primary">CKEditor</span>
+                                        <span class="badge badge-soft-primary">Midtrans</span>
+                                        <span class="badge badge-soft-primary">Vue Js</span>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card bg-soft-dark">
+                                    <div class="card-body">
+                                        <!-- Swiper -->
+                                        <div class="swiper pagination-fraction-swiper rounded">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/01_utama.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/01_utama2.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/02_detail.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/02_detail2.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/03_cart.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/03_cart2.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/04_dashboard.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/05_admin.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/06_product.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/06_product2.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/login.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/ecommerce/register.png" alt="" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next bg-white shadow"></div>
+                                            <div class="swiper-button-prev bg-white shadow"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div><!-- end card-body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade events" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Event Management </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="fs-14 text-muted">
+                                    This is a web application about Event Management. This application is the result of me take <strong>Online Classes In Build With Angga</strong>, this application has features : 
+                                </p>
+                                <hr class="text-muted">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Backend and FrontEnd Web Application.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Login and Register User.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14"><strong>Send an Otp to Email when the User Register</strong>.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14"><strong>Setting Events, Talents, Categories and Organizers</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2">
+                                        <p class="text-muted mb-0 fs-14"><strong>Show Events and Detail Event.</strong></p>
+                                    </div>
+                                </div>
+                                <p class="mb-2">
+                                    <span class="text-primary">Languages and Tools :</span> 
+                                    <div class="hstack gap-2 mb-2">
+                                        <span class="badge badge-soft-primary">Javascript</span>
+                                        <span class="badge badge-soft-primary">Node Js</span>
+                                        <span class="badge badge-soft-primary">Express Js</span>
+                                        <span class="badge badge-soft-primary">React Js</span>
+                                        <span class="badge badge-soft-primary">Next Js</span>
+                                        <span class="badge badge-soft-primary">MongoDb</span>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card bg-soft-dark">
+                                    <div class="card-body">
+                                        <!-- Swiper -->
+                                        <div class="swiper pagination-fraction-swiper rounded">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/01_utama1.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/01_utama2.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/01_utama3.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/01_utama5.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/02_details_event.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/03_buy_ticket.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/login.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/register.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/otp.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/04_event_postman.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/event/04_order_postman.png" alt="" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next bg-white shadow"></div>
+                                            <div class="swiper-button-prev bg-white shadow"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div><!-- end card-body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade cosmetic-app" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Cosmetic App</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="fs-14 text-muted">
+                                    This is a web application Landing Page about Cosmetic App "Sabun Giv". This application is made for the needs of a technical test, this application has features : 
+                                </p>
+                                <hr class="text-muted">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Landing Page Web Application with React JS.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Menu in Web Application Home, About, Services, Gallery, Testimonial and Contact.</p>
+                                    </div>
+                                </div>
+                                <p class="mb-2">
+                                    <span class="text-primary">Languages and Tools :</span> 
+                                    <div class="hstack gap-2 mb-2">
+                                        <span class="badge badge-soft-primary">Javascript</span>
+                                        <span class="badge badge-soft-primary">Node Js</span>
+                                        <span class="badge badge-soft-primary">React Js</span>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card bg-soft-dark">
+                                    <div class="card-body">
+                                        <!-- Swiper -->
+                                        <div class="swiper pagination-fraction-swiper rounded">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/cosmetic_app/01_home.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/cosmetic_app/02_about.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/cosmetic_app/03_service.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/cosmetic_app/03_service2.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/cosmetic_app/04_gallery.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/cosmetic_app/05_testimoni.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/cosmetic_app/06_contact.png" alt="" class="img-fluid" />
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="swiper-button-next bg-white shadow"></div>
+                                            <div class="swiper-button-prev bg-white shadow"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div><!-- end card-body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade simple-crud-blogs" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Simple CRUD - Blogs</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="fs-14 text-muted">
+                                    This is a web application Simple CRUD - Blogs with Laravel, Vue Js and Inertia Js. This application is made for self learning, this application has features : 
+                                </p>
+                                <hr class="text-muted">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Create, Read, Update and Delete Data Blogs.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Feature authentication with <strong>Laravel Breeze.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Frontend with Vue Js.</p>
+                                    </div>
+                                </div>
+                                <p class="mb-2">
+                                    <span class="text-primary">Languages and Tools :</span> 
+                                    <div class="hstack gap-2 mb-2">
+                                        <span class="badge badge-soft-primary">Laravel</span>
+                                        <span class="badge badge-soft-primary">Vue Js</span>
+                                        <span class="badge badge-soft-primary">Inertia Js</span>
+                                        <span class="badge badge-soft-primary">Laravel Breeze</span>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card bg-soft-dark">
+                                    <div class="card-body">
+                                        <!-- Swiper -->
+                                        <div class="swiper pagination-fraction-swiper rounded">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/simple_crud_blogs/01_data.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/simple_crud_blogs/02_add.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/simple_crud_blogs/03_edit.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/simple_crud_blogs/04_delete.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/simple_crud_blogs/04_delete2.png" alt="" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next bg-white shadow"></div>
+                                            <div class="swiper-button-prev bg-white shadow"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div><!-- end card-body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade simple-hospital-queue" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Simple Hospital Queue</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="fs-14 text-muted">
+                                    This is a web application Simple Hospital Queue with C#, Net Core and Json. This application is made for the needs of a technical test, this application has features : 
+                                </p>
+                                <hr class="text-muted">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0"><strong>Create, Read and Update Patient Data in Json.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0"><strong>Data Storage With Json.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">The User fills in patient, service, payment, clinic and doctor data.</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">If you have selected, it will be filled in automatically.</p>
+                                    </div>
+                                </div>
+                                <p class="mb-2">
+                                    <span class="text-primary">Languages and Tools :</span> 
+                                    <div class="hstack gap-2 mb-2">
+                                        <span class="badge badge-soft-primary">C#</span>
+                                        <span class="badge badge-soft-primary">Net Core</span>
+                                        <span class="badge badge-soft-primary">Json</span>
+                                        <span class="badge badge-soft-primary">SweetAlert2</span>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card bg-soft-dark">
+                                    <div class="card-body">
+                                        <!-- Swiper -->
+                                        <div class="swiper pagination-fraction-swiper rounded">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/antrian/02_pasien.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/antrian/03_layanan.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/antrian/04_layanan.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/antrian/05_poli.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/antrian/06_dokter.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/antrian/07_data_pasien.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/antrian/07_pasien_detail.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/antrian/07_success.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/antrian/01_controller.png" alt="" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next bg-white shadow"></div>
+                                            <div class="swiper-button-prev bg-white shadow"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div><!-- end card-body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade simple-crud-library" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Simple CRUD - Library</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <p class="fs-14 text-muted">
+                                    This is a web application Simple CRUD - Library with C#, Net Core and Microsoft Sql Server. This application is made for self learning, this application has features : 
+                                </p>
+                                <hr class="text-muted">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0"><strong>Create, Read, Update and Delete Member Data.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0"><strong>Data Storage With Microsoft SQL Server.</strong></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-2">
+                                    <div class="flex-shrink-0">
+                                        <i class="ri-checkbox-circle-fill text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1 ms-2 fs-14">
+                                        <p class="text-muted mb-0">Nuget Install Microsoft : EntityFrameworkCore, EntityFrameworkCore.SqlServer, EntityFrameworkCore.Tools, AspNetCore.Mvc.Razor.RuntimeCompilation.</p>
+                                    </div>
+                                </div>
+                                <p class="mb-2">
+                                    <span class="text-primary">Languages and Tools :</span> 
+                                    <div class="hstack gap-2 mb-2">
+                                        <span class="badge badge-soft-primary">C#</span>
+                                        <span class="badge badge-soft-primary">Net Core</span>
+                                        <span class="badge badge-soft-primary">Microsoft SQL Server</span>
+                                        <span class="badge badge-soft-primary">SweetAlert2</span>
+                                    </div>
+                                </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card bg-soft-dark">
+                                    <div class="card-body">
+                                        <!-- Swiper -->
+                                        <div class="swiper pagination-fraction-swiper rounded">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/library_core/01_data.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/library_core/02_add.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/library_core/06_simpan.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/library_core/03_edit.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/library_core/04_delete.png" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="assets/images/library_core/05_code.png" alt="" class="img-fluid" />
+                                                </div>
+                                            </div>
+                                            <div class="swiper-button-next bg-white shadow"></div>
+                                            <div class="swiper-button-prev bg-white shadow"></div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div><!-- end card-body -->
+                                </div><!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+      </section>
+      <!-- end portfolio -->
+
+      <!-- start certificate -->
+      <section class="section bg-light" id="certificate">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <h1 class="mb-3 ff-secondary fw-semibold lh-base">My <span class="text-primary">Certificate</span></h1>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-sm-7 col-10 mx-auto">
+                    <div>
+                        <img src="assets/images/file.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Swiper -->
+                            <div class="swiper pagination-fraction-swiper rounded">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".BWA_MERN">
+                                            <img src="assets/images/sertifikat/BWA_MERN.jpg" alt="" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".BWA_Ecommerce">
+                                            <img src="assets/images/sertifikat/BWA_Ecommerce.jpg" alt="" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".Dicoding_Javascript">
+                                            <img src="assets/images/sertifikat/Dicoding_Javascript.jpg" alt="" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".Dicoding_Devops">
+                                            <img src="assets/images/sertifikat/Dicoding_Devops.jpg" alt="" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".Dicoding_AWS">
+                                            <img src="assets/images/sertifikat/Dicoding_AWS.jpg" alt="" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".Rakamin_Backend">
+                                            <img src="assets/images/sertifikat/Rakamin_Backend.jpg" alt="" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".Rakamin_Fullstack">
+                                            <img src="assets/images/sertifikat/Rakamin_Fullstack.jpg" alt="" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".Hacktiv8">
+                                            <img src="assets/images/sertifikat/Hacktiv8.jpg" alt="" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0);" class="link-success" data-bs-toggle="modal" data-bs-target=".BNSP">
+                                            <img src="assets/images/sertifikat/BNSP.jpg" alt="" class="img-fluid" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next bg-white shadow"></div>
+                                <div class="swiper-button-prev bg-white shadow"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div><!-- end card-body -->
+                    </div><!-- end card -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+
+        <!-- Modals -->
+        <div class="modal fade BWA_MERN" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Sertifikat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="rounded shadow" alt="200x200" width="100%" src="assets/images/sertifikat/BWA_MERN.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal fade BWA_Ecommerce" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Sertifikat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="rounded shadow" alt="200x200" width="100%" src="assets/images/sertifikat/BWA_Ecommerce.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal fade Dicoding_Javascript" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Sertifikat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="rounded shadow" alt="200x200" width="100%" src="assets/images/sertifikat/Dicoding_Javascript.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal fade Dicoding_Devops" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Sertifikat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="rounded shadow" alt="200x200" width="100%" src="assets/images/sertifikat/Dicoding_Devops.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal fade Dicoding_AWS" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Sertifikat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="rounded shadow" alt="200x200" width="100%" src="assets/images/sertifikat/Dicoding_AWS.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal fade Rakamin_Backend" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Sertifikat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="rounded shadow" alt="200x200" width="100%" src="assets/images/sertifikat/Rakamin_Backend.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal fade Rakamin_Fullstack" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Sertifikat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="rounded shadow" alt="200x200" width="100%" src="assets/images/sertifikat/Rakamin_Fullstack.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal fade Hacktiv8" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Sertifikat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="rounded shadow" alt="200x200" width="100%" src="assets/images/sertifikat/Hacktiv8.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal fade BNSP" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myExtraLargeModalLabel"><i class="ri-award-fill align-bottom me-1 text-primary"></i> Sertifikat</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="rounded shadow" alt="200x200" width="100%" src="assets/images/sertifikat/BNSP.jpg">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!-- end certificate -->
+
+      <!-- Start footer -->
+      <footer class="custom-footer bg-dark py-5 position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mt-4">
+                    <div>
+                        <div>
+                            <h5 class="text-white mb-0">My Portfolio</h5>
+                        </div>
+                        <div class="mt-4 fs-13">
+                            <p>Hii, This is My Web Profile ~~</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 ms-lg-auto">
+                    <div class="row">
+                        <div class="col-sm-4 mt-4">
+                            <h5 class="text-white mb-0">Profile</h5>
+                            <div class="text-muted mt-3">
+                                <ul class="list-unstyled ff-secondary footer-list fs-14">
+                                    <li><a href="#hero">Home</a></li>
+                                    <li><a href="#aboutl">About</a></li>
+                                    <li><a href="#experiences">Experiences</a></li>
+                                    <li><a href="#portfolio">Portfolio</a></li>
+                                    <li><a href="#certificate">Certificate</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mt-4">
+                            <h5 class="text-white mb-0">Apps Pages</h5>
+                            <div class="text-muted mt-3">
+                                <ul class="list-unstyled ff-secondary footer-list fs-14">
+                                    <li><a href="#portfolio">Portfolio</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 mt-4">
+                            <h5 class="text-white mb-0">Connect With Me</h5>
+                            <div class="text-muted mt-3">
+                                <ul class="list-unstyled ff-secondary footer-list fs-14">
+                                    <li><a href="https://github.com/daniar-17" target="_blank">Git Hub</a></li>
+                                    <li><a href="https://www.linkedin.com/in/daniar-nur-amin/" target="_blank">Linkedin</a></li>
+                                    <li><a href="https://www.instagram.com/daniar_nur_amin/" target="_blank">Instagram</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row text-center text-sm-start align-items-center mt-5">
+                <div class="col-sm-6">
+
+                    <div>
+                        <p class="copy-rights mb-0">
+                            <script> document.write(new Date().getFullYear()) </script> © Daniar Nur Amin
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end mt-3 mt-sm-0">
+                        <ul class="list-inline mb-0 footer-social-link">
+                            <li class="list-inline-item">
+                                <a href="javascript: void(0);" class="avatar-xs d-block">
+                                    <div class="avatar-title rounded-circle">
+                                        <i class="ri-facebook-fill"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javascript: void(0);" class="avatar-xs d-block">
+                                    <div class="avatar-title rounded-circle">
+                                        <i class="ri-github-fill"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javascript: void(0);" class="avatar-xs d-block">
+                                    <div class="avatar-title rounded-circle">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javascript: void(0);" class="avatar-xs d-block">
+                                    <div class="avatar-title rounded-circle">
+                                        <i class="ri-google-fill"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javascript: void(0);" class="avatar-xs d-block">
+                                    <div class="avatar-title rounded-circle">
+                                        <i class="ri-dribbble-line"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </footer>
+      <!-- end footer -->
+
+      <!--start back-to-top-->
+      <button
+        onclick="topFunction()"
+        class="btn btn-danger btn-icon landing-back-top"
+        id="back-to-top"
+      >
+        <i class="ri-arrow-up-line"></i>
+      </button>
+      <!--end back-to-top-->
+    </div>
+    <!-- end layout wrapper -->
+
+    <!-- Javascript Js -->
+        <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- swiper.init js -->
+    <script src="assets/js/pages/swiper.init.js"></script>
+
+    <script src="assets/js/pages/timeline.init.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="assets/libs/prismjs/prism.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="assets/libs/prismjs/prism.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Modal Js -->
+    <script src="assets/js/pages/modal.init.js"></script>
+
+    <!-- landing init -->
+    <script src="assets/js/pages/landing.init.js"></script>
+
+    <script src="assets/js/pages/nft-landing.init.js"></script>
+  </body>
+</html>
